@@ -143,14 +143,14 @@ func processTags(config interface{}, prefix ...string) error {
 			}
 		}
 
-		if field.Kind() == reflect.Slice {
-			var length = field.Len()
-			for i := 0; i < length; i++ {
-				if err := processTags(field.Index(i).Addr().Interface(), append(prefix, fieldStruct.Name, fmt.Sprintf("%d", i))...); err != nil {
-					return err
-				}
-			}
-		}
+		//if field.Kind() == reflect.Slice {
+		//	var length = field.Len()
+		//	for i := 0; i < length; i++ {
+		//		if err := processTags(field.Index(i).Addr().Interface(), append(prefix, fieldStruct.Name, fmt.Sprintf("%d", i))...); err != nil {
+		//			return err
+		//		}
+		//	}
+		//}
 	}
 	return nil
 }
